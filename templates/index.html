@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кохання це...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="table-background">
+
+    <!-- Фонові декоративні слова, сердечка та емодзі -->
+    <div class="bg-decor bg-1">❤️ кохання</div>
+    <div class="bg-decor bg-2">✨ назавжди</div>
+    <div class="bg-decor bg-3">🥂 спогади</div>
+    <div class="bg-decor bg-4">🌸 тепло</div>
+    <div class="bg-decor bg-5">💖 емоції </div>
+    <div class="bg-decor bg-6">✨ щастя</div>
+
+    <!-- ЕКРАН 1: Головне вітальне меню -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <h1 class="glow-text">Кохання це...</h1>
+            <p>Особливий альбом найтепліших моментів</p>
+            <button id="start-btn" class="btn">Почати</button>
+        </div>
+        <div style="position: absolute; right: 40px; bottom: 30px; font-size: 1.05rem; color: #d1b3bd; font-style: italic; z-index: 5;">
+            Автор: Наша велика і дружня родина
+        </div>
+    </div>
+
+    <!-- ЕКРАН 2: 3D-обкладинка альбому на столі -->
+    <div id="cover-screen" class="screen">
+        <div class="album-cover-wrapper">
+            <div class="album-cover" id="open-album-btn">
+                <span class="cover-decor-text decor-1">✨ назавжди разом</span>
+                <span class="cover-decor-text decor-2">❤️ кохання</span>
+                <span class="cover-decor-text decor-3">🌸 щасливі моменти</span>
+                <span class="cover-decor-text decor-4">з теплотою ✨</span>
+
+                <div class="cover-image-container">
+                    <img src="{{ url_for('static', filename='images/main.jpg') }}" alt="Обкладинка альбому">
+                </div>
+                <div class="cover-title-box">
+                    <h2>Історія одного кохання</h2>
+                    <span class="click-hint">(Натисни, щоб відкрити альбом)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЕКРАН 3: Об'ємний 3D-альбом зсередини -->
+    <div id="album-screen" class="screen">
+        <div class="book-scene">
+            <div class="book">
+                <!-- Ліва сторінка: Фотографія у стилі коміксу та коміксний бабл -->
+                <div class="page left-page">
+                    <div class="comic-photo-frame">
+                        <img id="memory-img" src="" alt="Фото спогаду">
+                        <div id="speech-bubble" class="speech-bubble" style="display: none;">Чіз б*я!</div>
+                    </div>
+                </div>
+
+                <!-- Центральний корінець для 3D ефекту вигину -->
+                <div class="book-spine"></div>
+
+                <!-- Права сторінка: Оформлена рамкою та унікальними емодзі -->
+                <div class="page right-page">
+                    <div class="text-content">
+                        <div class="love-is-box">
+                            <div class="love-is-header">
+                                <div class="love-is-title">Кохання це...</div>
+                                <div id="memory-emoji" class="memory-emoji"></div>
+                            </div>
+                            <p id="memory-text">Опис спогаду...</p>
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button id="prev-btn" class="nav-btn">Попередня</button>
+                        <span id="page-indicator">1 / 10</span>
+                        <button id="next-btn" class="nav-btn">Наступна</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЕКРАН 4: Фінал з привітанням (з елегантною карткою та плавною появою) -->
+    <div id="final-screen" class="screen">
+        <div class="final-content-card">
+            <h2 class="final-title">З першою річницею! 🥂❤️</h2>
+
+            <div class="final-scroll-text">
+                <p>Ну що ж, якщо ви читаєте цей текст, то ви вже завершили переглядати ваші найяскравіші спогади. Принаймні я постарався згадати все найважливіше, але впевнений, що щось все одно залишилося за кадром :)</p>
+
+                <p><strong>Отже, хочу щиро привітати вас із вашою першою річницею! ❤️</strong></p>
+
+                <p>Здається, ще зовсім недавно розпочалася ця нова сторінка вашого життя, а сьогодні ви вже можете озирнутися назад і побачити цілий рік, наповнений спільними моментами, радістю, переживаннями, маленькими пригодами та безліччю спогадів.</p>
+
+                <p>Я хочу побажати вам, щоб цей перший рік став лише початком вашої великої та красивої історії. Нехай попереду буде ще багато щасливих років разом, нових місць, подорожей, сімейних свят, теплих вечорів і моментів, які захочеться зберегти у пам’яті назавжди.</p>
+
+                <p>Нехай у вашому домі завжди буде тепло, затишно і радісно. Нехай ви завжди підтримуєте одне одного, знаходите сили разом долати труднощі та ніколи не забуваєте радіти простим речам, які роблять життя особливим. ❤️</p>
+
+                <p>І окремо я хочу сказати вам величезне дякую за все, що ви зробили для мене. За вашу допомогу, турботу, доброту, підтримку і за всі моменти, коли ви були поруч. Я щиро ціную кожен ваш вчинок і кожну вашу допомогу. Для мене це справді дуже багато означає, і я ніколи цього не забуду.</p>
+
+                <p>Я дуже радий, що мав можливість бути частиною ваших спогадів і що тепер можу привітати вас із таким особливим днем.</p>
+
+                <p class="highlight-greet">З першою річницею вас! 🥂❤️</p>
+
+                <p>Нехай цей перший рік стане фундаментом для ще багатьох прекрасних років, а найкращі спогади вашої історії будуть ще попереду!</p>
+
+                <p class="final-footer-text"><strong>Будьте щасливі, бережіть одне одного і продовжуйте створювати свою історію разом. ❤️</strong></p>
+            </div>
+
+            <div class="final-btn-container">
+                <button id="restart-btn" class="btn">Переглянути знову</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const memoriesData = {{ memories | tojson | safe }};
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
